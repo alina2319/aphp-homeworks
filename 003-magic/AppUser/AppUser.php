@@ -1,7 +1,8 @@
 <?php
 declare(strict_types=1);
-use AppUser\AppUser;
-use MobileUser\MobileUser;
+namespace AppUser;
+use AppTrait\AppTrait;
+use User\User;
 function autoload(string $className): void
 {
   $filename = __DIR__ . '/' . str_replace('\\', '/', $className) . '.php';
@@ -11,9 +12,10 @@ function autoload(string $className): void
 }
 
 spl_autoload_register('autoload');
+class AppUser extends User
+{
+  public string $login = 'Mishka';
+  public string $password = '12345';
 
-$mobileUser = new MobileUser();
-$appUser = new AppUser();
-
-$mobileUser::authenticate('Dima','54321');
-$appUser::authenticate('Mishka', '12345');
+  use AppTrait;
+}

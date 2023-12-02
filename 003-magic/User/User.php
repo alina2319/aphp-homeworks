@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-use AppUser\AppUser;
-use MobileUser\MobileUser;
+namespace User;
+use UserLoginInterface\UserLoginInterface;
 function autoload(string $className): void
 {
   $filename = __DIR__ . '/' . str_replace('\\', '/', $className) . '.php';
@@ -11,9 +11,8 @@ function autoload(string $className): void
 }
 
 spl_autoload_register('autoload');
-
-$mobileUser = new MobileUser();
-$appUser = new AppUser();
-
-$mobileUser::authenticate('Dima','54321');
-$appUser::authenticate('Mishka', '12345');
+abstract class User implements UserLoginInterface
+{
+  public string $login;
+  public string $password;
+}
