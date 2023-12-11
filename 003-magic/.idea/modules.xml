@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/traits.iml" filepath="$PROJECT_DIR$/.idea/traits.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aphp-magic/.idea/aphp-magic.iml" filepath="$PROJECT_DIR$/../aphp-magic/.idea/aphp-magic.iml" />
     </modules>
   </component>
 </project>
